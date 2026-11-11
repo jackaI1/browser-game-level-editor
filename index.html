@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser platformer</title>
+  </head>
+  <body>
+    <nav><a href="./editor.html">Level editor</a></nav>
+    <h1>Browser platformer</h1>
+    <div class="controls">
+      <label for="level">Level</label>
+      <select id="level"></select>
+      <button id="restart" type="button">Restart (R)</button>
+    </div>
+    <canvas id="game" width="960" height="540"></canvas>
+    <p id="status" class="status"></p>
+    <p class="hint">Move with the arrow keys or A and D. Jump with Space, W or the up arrow. Hold jump to keep hopping. Reach the flag to finish.</p>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
