@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level editor</title>
+  </head>
+  <body>
+    <nav><a href="./">Play the game</a></nav>
+    <h1>Level editor</h1>
+    <div class="toolbar">
+      <label for="level-name">Name</label>
+      <input id="level-name" type="text" maxlength="40" value="my-level" />
+      <label for="width">Columns</label>
+      <input id="width" type="number" min="4" max="120" value="30" />
+      <label for="height">Rows</label>
+      <input id="height" type="number" min="3" max="40" value="15" />
+      <button id="new-level" type="button">New level</button>
+    </div>
+    <div class="toolbar" id="tools">
+      <button type="button" class="tool active" data-tool="#">Solid (#)</button>
+      <button type="button" class="tool" data-tool="^">Spike (^)</button>
+      <button type="button" class="tool" data-tool="P">Spawn (P)</button>
+      <button type="button" class="tool" data-tool="G">Goal (G)</button>
+      <button type="button" class="tool" data-tool=".">Erase (.)</button>
+    </div>
+    <div class="editor-wrap"><canvas id="editor"></canvas></div>
+    <div class="toolbar">
+      <button id="save" type="button">Save as JSON</button>
+      <label class="button-like"><button id="open" type="button">Load JSON</button></label>
+      <input id="file" type="file" accept=".json,application/json" hidden />
+      <button id="play" type="button">Play this level</button>
+    </div>
+    <p id="messages" class="status"></p>
+    <p class="hint">Click or drag to paint. There is one spawn and one goal per level. Save downloads a JSON file you can load again later.</p>
+    <script type="module" src="./src/editor/main.ts"></script>
+  </body>
+</html>
